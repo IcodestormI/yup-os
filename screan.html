@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YUP OS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home-style.css">
+    <link rel="stylesheet" href="flappy-style.css">
+    <script src="https://kit.fontawesome.com/a8722be340.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="calculator.css">
+    <style>
+        .sor{
+            color:#0f5ca0;
+            font-size: 20px;
+        }
+        .sorr{
+            color: coral;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3 class="sor">username : fero</h3>
+    <h3 class="sorr">passford : f12009</h3>
+    <div class="lock-bar-slider"><div class="locker" id="lock" onclick="slider(this.id)">Lock</div></div>
+    <div class="login-box">
+        <span id="span">wrong username or password</span>
+        <input type="text" class="username" placeholder="username">
+        <input type="password" class="password" placeholder="password">
+        <input type="button" value="LOGIN" class="submit" onclick="submit()">
+    </div>
+    <div class="home" id="home">
+        <div onclick="opengallery()"><i class="fa-solid fa-image"></i></div>
+        <div onclick="openbrowser(this.id)"><i class="fa-solid fa-globe"></i></div>
+        <div onclick="openmusic()"><i class="fa-solid fa-music"></i></div>
+        <div onclick="google(this.id)"><i class="fa-brands fa-google"></i></div>
+        <div onclick="opennote()"><i class="fa-solid fa-book"></i></div>
+        <div onclick="opengameplayer()"><i class="fa-solid fa-gamepad"></i></div>
+        <div onclick="opencalc()"><i class="fa-solid fa-calculator"></i></div>
+    </div>
+    <div class="container1">
+        <div class="bar1">
+            <span class="c1"></span>
+            <span class="c2"></span>
+            <span class="c3"></span>
+            <span class="title1">browser</span>
+        </div>
+        <div class="browser">
+            <input type="text" placeholder="Search" class="search-bar">
+            <a href="https://www.facebook.com/"><span class="fac"><i class="fa-brands fa-facebook"></i></span></a>
+            <a href="https://twitter.com/?lang=en"><span class="twi"><i class="fa-brands fa-twitter"></i></span></a>
+            <a href="https://www.instagram.com/"><span class="ins"><i class="fa-brands fa-instagram"></i></span></a>
+            <a href="https://www.tiktok.com/en/"><span class="tik"><i class="fa-brands fa-tiktok"></i></span></a>
+            <a href="https://www.youtube.com/"><span class="you"><i class="fa-brands fa-youtube"></i></span></a>
+        </div>
+    </div>
+    <div id="quit" onclick="quit(this.id)"><i class="fa-solid fa-x"></i></div>
+    <div class="container2">
+        <div class="bar1">
+            <span class="c1"></span>
+            <span class="c2"></span>
+            <span class="c3"></span>
+            <span class="title2">Google</span>
+        </div>
+        <div class="google">
+            <iframe src="https://www.google.com?igu=1" frameborder="0" class="browser"></iframe>
+        </div>
+    </div>
+    <div class="container3">
+        <div class="bar1">
+            <span class="c1"></span>
+            <span class="c2"></span>
+            <span class="c3"></span>
+            <span class="title3">Keep Notes</span>
+        </div>
+        <div class="notebook">
+            <div class="sidebar">
+                <input type="button" id="sub" value="ADD NOTE">
+            </div>
+            <div class="main-view">
+                <textarea id="text"></textarea>
+                <span class="pens p1" onclick="black()"><i class="fa-solid fa-pen black"></i></span>
+                <span class="pens p2" onclick="red()"><i class="fa-solid fa-pen red"></i></span>
+                <span class="pens p3" onclick="green()"><i class="fa-solid fa-pen green"></i></span>
+                <span class="pens p4" onclick="blue()"><i class="fa-solid fa-pen blue"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="nav-bar">
+        <span id="clock-bar">4:48 PM</span>
+        <span class="message"><i class="fa-solid fa-message"></i></span>
+        <span id="bar-spacing"></span>
+    </div>
+    <!--game container-->
+    <div class="container4">
+        <div class="bar1">
+            <span class="c1"></span>
+            <span class="c2"></span>
+            <span class="c3"></span>
+            <span class="title1">Games</span>
+        </div>
+        <div class="game-screan">
+            <span class="xo" onclick="openxo()">
+                <span class="xo-icon">
+                    <i class="fa-solid fa-x x"></i>
+                    <i class="fa-solid fa-o"></i>
+                </span>
+            </span>
+            <span class="flappy" onclick="openflappy()">
+                <i class="fa-solid fa-trophy"></i>
+            </span>
+        </div>
+    </div>
+    <!--xo-game-->
+    <div class="xo-screan">
+        <div id="quit-games" onclick="quitgames(this.id)"><i class="fa-solid fa-x quit-games"></i></div>
+        <input type="button" value="Restart" id="rest" onclick="restart()">
+        <div class="xo-game-container">
+            <div class="title"><span>X O</span> GAME</div>
+            <div class="square" id="box1" onclick="game(this.id)"></div>
+            <div class="square" id="box2" onclick="game(this.id)"></div>
+            <div class="square" id="box3" onclick="game(this.id)"></div>
+            <div class="square" id="box4" onclick="game(this.id)"></div>
+            <div class="square" id="box5" onclick="game(this.id)"></div>
+            <div class="square" id="box6" onclick="game(this.id)"></div>
+            <div class="square" id="box7" onclick="game(this.id)"></div>
+            <div class="square" id="box8" onclick="game(this.id)"></div>
+            <div class="square" id="box9" onclick="game(this.id)"></div>
+        </div>
+    </div>
+    <!--flappy-bird-->
+    <div class="flappy-screan">
+        <div id="quit-games" onclick="quitgames(this.id)"><i class="fa-solid fa-x quit-games"></i></div>
+        <div id="end-menu">
+            <h1>Game-over!</h1>
+            <p> Score: <span id="end-score"></span></p>
+            <p> Best: <span id="best-score"></span></p>
+            <button id="restart-button">Restart</button>
+        </div>
+        <div id="game-container">
+            <canvas id="game-canvas" width="400" height="600"></canvas>
+            <div id="score-display">0</div>
+        </div>
+    </div>
+    <!--gallery-->
+    <div class="container5">
+        <div class="bar1">
+            <span class="c1"></span>
+            <span class="c2"></span>
+            <span class="c3"></span>
+            <span class="title1">Gallery</span>
+        </div>
+        <div class="glallery-box">
+            <div id="galley-main-view">
+                <img src="pictures/gallery-svgrepo-com.svg" id="imagati">
+
+            </div>
+            <div class="gallery-slider-bar">
+                <img src="pictures/image.jpg"class="picture-boxes" onclick="openimage(this.src)">
+                <img src="pictures/image1.jpg"class="picture-boxes" onclick="openimage(this.src)">
+                <img src="pictures/image2.jpg"class="picture-boxes"onclick="openimage(this.src)">
+                <img src="pictures/image3.jpg"class="picture-boxes"onclick="openimage(this.src)">
+                <img src="pictures/image4.jpg"class="picture-boxes"onclick="openimage(this.src)">
+                <img src="pictures/image5.jpg"class="picture-boxes"onclick="openimage(this.src)">
+                <img src="pictures/image6.jpg"class="picture-boxes"onclick="openimage(this.src)">
+                <img src="pictures/image7.jpg"class="picture-boxes"onclick="openimage(this.src)">
+                <img src="pictures/image8.jpg" class="picture-boxes"onclick="openimage(this.src)">
+                <img src="pictures/image9.jpg" class="picture-boxes"onclick="openimage(this.src)">
+                <img src="pictures/image10.jpg"class="picture-boxes"onclick="openimage(this.src)">
+            </div>
+        </div>
+    </div>
+    <div class="container6">
+        <div class="bar1">
+            <span class="c1"></span>
+            <span class="c2"></span>
+            <span class="c3"></span>
+            <span class="title1">Music</span>
+        </div>
+        <div class="music-main-view">
+            <div class="music-slider">
+                <div class="slowly" onclick="slowly()">
+                    <h2 class="songs-numbering">1</h2>
+                    <h2 class="songs-names">Let Me Down Slowly</h2>
+                    <img src="songs-pic/slowly.jpeg" id="songimg">
+                    <i class="fa-regular fa-heart" id="hearting1" onclick="whishlist1(this.id)"></i>
+                    <h2 class="songs-timelap">2:57</h2>
+                </div>
+                <div class="night" onclick="night()">
+                    <h2 class="songs-numbering">2</h2>
+                    <h2 class="songs-names">Living Life In The Night</h2>
+                    <img src="songs-pic/life-night.jpeg" id="songimg">
+                    <i class="fa-regular fa-heart" id="hearting2" onclick="whishlist2(this.id)"></i>
+                    <h2 class="songs-timelap">2:02</h2>
+                </div>
+                <div class="unholy" onclick="unholy()">
+                    <h2 class="songs-numbering">3</h2>
+                    <h2 class="songs-names">Unholy</h2>
+                    <img src="songs-pic/unholy.jpeg" id="songimg">
+                    <i class="fa-regular fa-heart" id="hearting3" onclick="whishlist3(this.id)"></i>
+                    <h2 class="songs-timelap">2:37</h2>
+                </div>
+                <div class="money" onclick="money()">
+                    <h2 class="songs-numbering">4</h2>
+                    <h2 class="songs-names">Money Rain</h2>
+                    <img src="songs-pic/money-rain.jpeg" id="songimg">
+                    <i class="fa-regular fa-heart" id="hearting4" onclick="whishlist4(this.id)"></i>
+                    <h2 class="songs-timelap">2:37</h2>
+                </div>
+                <div class="tokyo" onclick="tokyo()">
+                    <h2 class="songs-numbering">5</h2>
+                    <h2 class="songs-names">Tokyo Drift</h2>
+                    <img src="songs-pic/tokyo-drift.jpeg" id="songimg">
+                    <i class="fa-regular fa-heart" id="hearting5" onclick="whishlist5(this.id)"></i>
+                    <h2 class="songs-timelap">4:17</h2>
+                </div>
+                <div class="ola" onclick="ola()">
+                    <h2 class="songs-numbering">6</h2>
+                    <h2 class="songs-names">Sofia Reyes 1,2,3</h2>
+                    <img src="songs-pic/un,do,tres.jpeg" id="songimg">
+                    <i class="fa-regular fa-heart" id="hearting6" onclick="whishlist6(this.id)"></i>
+                    <h2 class="songs-timelap">3:25</h2>
+                </div>
+                <div class="thunder" onclick="thunder()">
+                    <h2 class="songs-numbering">7</h2>
+                    <h2 class="songs-names">Thunder</h2>
+                    <img src="songs-pic/thunder.jpeg" id="songimg">
+                    <i class="fa-regular fa-heart" id="hearting7" onclick="whishlist7(this.id)"></i>
+                    <h2 class="songs-timelap">2:40</h2>
+                </div>
+                <div class="lalala" onclick="lalala()">
+                    <h2 class="songs-numbering">8</h2>
+                    <h2 class="songs-names">La La La</h2>
+                    <img src="songs-pic/lalala.jpeg" id="songimg">
+                    <i class="fa-regular fa-heart" id="hearting8" onclick="whishlist8(this.id)"></i>
+                    <h2 class="songs-timelap">2:40</h2>
+                </div>
+                <div class="shape" onclick="shape()">
+                    <h2 class="songs-numbering">9</h2>
+                    <h2 class="songs-names">Shape Of You</h2>
+                    <img src="songs-pic/shape-of-you.jpeg" id="songimg">
+                    <i class="fa-regular fa-heart" id="hearting9" onclick="whishlist9(this.id)"></i>
+                    <h2 class="songs-timelap">3:55</h2>
+                </div>
+                <div class="ordinary" onclick="ordinary()">
+                    <h2 class="songs-numbering">10</h2>
+                    <h2 class="songs-names">My Ordinary Life</h2>
+                    <img src="songs-pic/ordinary-life.jpeg" id="songimg">
+                    <i class="fa-regular fa-heart" id="hearting10" onclick="whishlist10(this.id)"></i>
+                    <h2 class="songs-timelap">4:05</h2>
+                </div>
+            </div>
+            <audio src="" class="audio" controls></audio>
+        </div>
+    </div>
+    <div class="container7">
+        <div class="bar1">
+            <span class="c1"></span>
+            <span class="c2"></span>
+            <span class="c3"></span>
+            <span class="title1">Calculator</span>
+        </div>
+        <div class="calculator">
+            <div id="body">
+                <div class="lbox one" id="n1"   onclick="squarewty(this.id)">1</div>
+                <div class="lbox two" id="n2"   onclick="squarewty(this.id)">2</div>
+                <div class="lbox three" id="n3" onclick="squarewty(this.id)">3</div>
+                <div class="lbox four" id="n4"  onclick="squarewty(this.id)">4</div>
+                <div class="lbox five" id="n5"  onclick="squarewty(this.id)">5</div>
+                <div class="lbox six" id="n6"   onclick="squarewty(this.id)">6</div>
+                <div class="lbox seven" id="n7" onclick="squarewty(this.id)">7</div>
+                <div class="lbox eight" id="n8" onclick="squarewty(this.id)">8</div>
+                <div class="lbox nine" id="n9"  onclick="squarewty(this.id)">9</div>
+                <div class="lbox zero" id="n10" onclick="squarewty(this.id)">0</div>
+                <div class="lbox eq" id="eq" onclick="equal(this.id)">=</div>
+                <div class="lbox min opr" id="plus" onclick="opr(this.id)">-</div>
+                <div class="lbox plus opr" id="min" onclick="opr(this.id)">+</div>
+                <div class="lbox mult opr" id="mult" onclick="opr(this.id)">*</div>
+                <div class="lbox divide opr" id="div" onclick="opr(this.id)">/</div>
+                <div class="lbox c" onclick="del()">AC</div>
+                <div class="lbox del" id="del" onclick="delet()">DEL</div>
+                <div class="lbox dot" id="dot" onclick="opr(this.id)">.</div>
+                <div class="calc"></div>
+            </div>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+    <script src="game.js"></script>
+    <script src="xo-index.js"></script>     
+    <script src="note.js"></script>
+    <script src="index.js" class="frame"></script>
+</body>
+</html>

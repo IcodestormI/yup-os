@@ -1,0 +1,106 @@
+body{
+    background-color: darkslategrey;
+    margin: 0;
+    padding: 0;
+}
+#body{
+    background-color: beige;
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+    grid-template-rows: repeat(7,40px);
+    width: 198px;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.lbox{
+    background-color: white;
+    border: 1px gainsboro solid;
+    text-align: center;
+    padding-top: 10px;
+    
+}
+.eq{
+    grid-row: 7/8;
+    grid-column: 3/5;
+    background-color: orange;
+}
+.calc{
+    grid-row: 1/3;
+    grid-column: 1/5;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    text-align: left;
+    padding-top: 20px;
+    overflow: auto;
+}
+.dot{
+    grid-row: 7/8;
+    grid-column: 2/3;
+}
+.zero{
+    grid-row: 7/8;
+    grid-column: 1/2;
+}
+.one{
+    grid-row: 6/7;
+}
+.two{
+    grid-row: 6/7;
+}
+.three{
+    grid-row: 6/7;
+}
+.four{
+    grid-row: 5/6;
+}
+.five{
+    grid-row: 5/6;
+}
+.six{
+    grid-row: 5/6;
+}
+.seven{
+    grid-row: 4/5;
+}
+.eight{
+    grid-row: 4/5;
+}
+.nine{
+    grid-row: 4/5;
+}
+.c{
+    grid-row: 3/4;
+    grid-column: 1/3;
+}
+.del{
+    grid-row: 3/4;
+    grid-column: 3/4;
+}
+.min{
+    grid-row: 5/6;
+}
+.plus{
+    grid-row: 6/7;
+}
+.mult{
+    grid-row: 4/5;
+}
+.divide{
+    grid-row: 3/4;
+}
+.box:hover{
+    background-color: olive;
+}
+.eq:hover{
+    background-color: orange;
+    border: 2px black solid;
+}
+.calc span{
+    position: absolute;
+}
+
+
+
+
